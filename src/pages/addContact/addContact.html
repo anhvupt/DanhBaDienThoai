@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Chỉnh sửa thông tin
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="addContactForm">
+    <ion-list>
+      <ion-item>
+        <ion-label>ID:</ion-label>
+        <ion-input formControlName="ID" readonly> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Họ tên:</ion-label>
+        <ion-input formControlName="HoTen"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Biệt danh:</ion-label>
+        <ion-input formControlName="BietDanh"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Ngày sinh:</ion-label>
+        <ion-input formControlName="NgaySinh"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Số điện thoại:</ion-label>
+        <ion-input formControlName="SoDienThoai"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email:</ion-label>
+        <ion-input formControlName="Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>ID:</ion-label>
+        <ion-input formControlName="DiaChi"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+  <button style="background-color: greenyellow; width: 100% !important; height: 3em;" (click)="addContact()">Thêm</button>
+
+</ion-content>

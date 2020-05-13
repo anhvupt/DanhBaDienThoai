@@ -1,14 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Danh bạ điện thoại
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+  <button style="background-color:greenyellow; width: 100% !important; height: 2.5em;" (click)="goToAddContact()">Thêm danh bạ</button>
+  <ion-card *ngFor="let contact of contacts" on-click="goToDetailInfo(contact.ID)">
+    <ion-list>
+      <ion-item>
+        <ion-label>{{contact.HoTen}} </ion-label> 
+      </ion-item>
+      <ion-item>
+        <ion-label>{{contact.SoDienThoai}} </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 </ion-content>

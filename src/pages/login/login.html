@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Đăng nhập
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="loginForm">
+        <ion-item>
+            <ion-label></ion-label>
+            <ion-input type="text" name="username" placeholder="Tên đăng nhập" formControlName="userName"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label></ion-label>
+            <ion-input type="password" name="password" placeholder="Mật khẩu" formControlName="password" required>
+            </ion-input>
+        </ion-item>
+    </form>
+
+    <button style="background-color: greenyellow; width: 100% !important; height: 3em;" (click)="login()">Đăng nhập</button>
+</ion-content>

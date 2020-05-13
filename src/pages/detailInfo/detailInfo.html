@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Thông tin chi tiết
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+      <ion-item>
+        <ion-label>ID: </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{contact.ID}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <hr/>
+    <ion-list>
+      <ion-item>
+        <small>Họ và Tên: </small>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{contact.HoTen}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <hr/>
+    <ion-list>
+      <ion-item>
+        <small>Biệt danh: </small>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{contact.BietDanh}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <hr/>
+    <ion-list>
+      <ion-item>
+        <small>Ngày sinh: </small>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{contact.NgaySinh}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <hr/>
+    <ion-list>
+      <ion-item>
+        <small>Số điện thoại: </small>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{contact.SoDienThoai}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <hr/>
+    <ion-list>
+      <ion-item>
+        <small>Email: </small>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{contact.Email}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <hr/>
+    <ion-list>
+      <ion-item>
+        <small>Địa chỉ: </small>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{contact.DiaChi}}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <button style="background-color:greenyellow; width: 100% !important; height: 2.5em;" (click)="goToEditInfo()">Chỉnh sửa</button>
+    <button style="background-color: lightsalmon; width: 100% !important; height: 3em;" (click)="deleteInfo()" >Xóa</button>
+
+
+</ion-content>
