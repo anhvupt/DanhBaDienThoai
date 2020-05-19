@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest';
 import { FormBuilder, Validators } from '@angular/forms';
 import {ContactInfo} from '../../models/contactInfo';
+import {HomePage} from '../home/home';
 
 @Component({
   templateUrl: 'addContact.html'
@@ -26,21 +27,26 @@ export class AddContactPage {
   }
 
   addContact(){
-    console.log(this.addContactForm.HoTen);
     let newContact = new ContactInfo(
-      this.addContactForm.value.ID, 
+      0, 
       this.addContactForm.value.HoTen, 
       this.addContactForm.value.BietDanh, 
-      this.addContactForm.value.SoDienThoai, 
       this.addContactForm.value.NgaySinh, 
+      this.addContactForm.value.SoDienThoai, 
       this.addContactForm.value.Email, 
       this.addContactForm.value.DiaChi, 
       );
-    console.log(newContact);
+
     this.restProvider.addContact(newContact).then(data=>{
       console.log(data);
+      if(data['statusText'] === 'OK'){
+        this.goToHome();
+      }
     })
   }
 
+  goToHome(){
+    this.navCtrl.push(HomePage);
+  }
 
 }

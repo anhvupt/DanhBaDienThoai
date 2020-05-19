@@ -1,5 +1,6 @@
 import { Http, Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
+import { stringify } from '@angular/core/src/util';
 
 const API_URL = "http://danhbadienthoai.somee.com/api";
 const CONTACT_URL = API_URL + '/DanhBa';
@@ -52,6 +53,8 @@ export class RestProvider {
 
     addContact(contact){
         return new Promise(resolve=>{
+            //let contactEx = {"ID":11,"HoTen":"vu","BietDanh":"","NgaySinh":"","SoDienThoai":"","Email":"","DiaChi":""};
+            console.log(JSON.stringify(contact));
             this.http.post(CONTACT_URL, JSON.stringify(contact), {headers:headers})
             .subscribe(data=>{
                 resolve(data);

@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest';
 import { FormBuilder, Validators } from '@angular/forms';
 import {ContactInfo} from '../../models/contactInfo';
+import {HomePage} from '../home/home';
 
 @Component({
   templateUrl: 'editInfo.html'
@@ -34,15 +35,22 @@ export class EditInfoPage {
       this.editContactForm.value.ID, 
       this.editContactForm.value.HoTen, 
       this.editContactForm.value.BietDanh, 
-      this.editContactForm.value.SoDienThoai, 
       this.editContactForm.value.NgaySinh, 
+      this.editContactForm.value.SoDienThoai, 
       this.editContactForm.value.Email, 
       this.editContactForm.value.DiaChi, 
       );
     console.log(editedContact);
     this.restProvider.editContact(editedContact).then(data=>{
       console.log(data);
+      if(data['statusText'] === 'OK'){
+        this.goToHome();
+      }
     });
+  }
+
+  goToHome(){
+    this.navCtrl.push(HomePage);
   }
 
 

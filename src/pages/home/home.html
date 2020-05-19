@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content padding>
-  <button style="background-color:greenyellow; width: 100% !important; height: 2.5em;" (click)="goToAddContact()">Thêm danh bạ</button>
+  <button class="myButton" style="background-color:greenyellow; width: 100% !important; height: 2.5em;" (click)="goToAddContact()">Thêm danh bạ</button>
   <ion-card *ngFor="let contact of contacts" on-click="goToDetailInfo(contact.ID)">
     <ion-list>
       <ion-item>
